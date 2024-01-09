@@ -3,6 +3,7 @@ const fs= require("fs");
 
 const server=http.createServer((req,res)=>{
   console.log("server is visit");
+  console.log(req.method);
   if (req.method=="GET") {
   fs.readFile("index.html",function(err,data){
     if (err) {
