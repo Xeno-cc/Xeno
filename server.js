@@ -4,7 +4,11 @@ const fs= require("fs");
 const server=http.createServer((req,res)=>{
   console.log("server is visit");
   console.log(req.method);
-  if (req.method=="GET") {
+  if (req.method="POST") {
+    
+    console.log("post internaes: "+req.body);
+    
+  } else {
   fs.readFile("index.html",function(err,data){
     if (err) {
       console.error(err);
@@ -15,10 +19,6 @@ const server=http.createServer((req,res)=>{
     res.write(data);
     return res.end();
   });
-  } else if (req.method="POST") {
-    
-    console.log("post internaes: "+req.body);
-    
   }
 });
 
