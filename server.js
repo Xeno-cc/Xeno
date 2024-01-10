@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{
   if (req.method=="POST") {
 
 console.log("body: "+req.body);
-    console.log(req.toString());
+    console.log(req);
 
     res.writeHead(200,{'Content-Type':'text/plain'});
     res.end("Sucess");
