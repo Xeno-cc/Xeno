@@ -11,6 +11,9 @@ const server=http.createServer((req,res)=>{
   if (req.method=="POST") {
 
 console.log("body: "+req.body);
+
+    res.writeHead(200,{'Content-Type':'text/plain'});
+    res.end("Sucess");
     
   } else if (req.method=="GET") {
   fs.readFile("index.html",function(err,data){
