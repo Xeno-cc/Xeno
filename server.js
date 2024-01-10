@@ -8,6 +8,11 @@ const server=http.createServer((req,res)=>{
     res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end("Holy shit lois");
 */
+  if (req.method=="POST") {
+
+console.log("body: "+req.body);
+    
+  } else if (req.method=="GET") {
   fs.readFile("index.html",function(err,data){
     if (err) {
       console.error(err);
@@ -18,7 +23,7 @@ const server=http.createServer((req,res)=>{
     res.write(data);
     return res.end();
   });
-  
+  }
   
 });
 
