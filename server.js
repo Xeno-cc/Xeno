@@ -5,7 +5,9 @@ const server=http.createServer((req,res)=>{
   console.log("server is visit");
   console.log(req.method);
     
-
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end("Holy shit lois");
+/*
   fs.readFile("index.html",function(err,data){
     if (err) {
       console.error(err);
@@ -16,6 +18,7 @@ const server=http.createServer((req,res)=>{
     res.write(data);
     return res.end();
   });
+  */
   
 });
 
